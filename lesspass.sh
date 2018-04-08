@@ -54,7 +54,7 @@ docker-compose down
 ###############
 echo "Create LetsEncrypt certificate..."
 mkdir letsencrypt
-docker run -it --rm -p 443:443 -p 80:80 -v $PWD/letsencrypt:/etc/letsencrypt/ certbot/certbot certonly --standalone --noninteractive --quiet --email $EMAIL --agree-tos -d $DOMAIN
+docker run -it --rm -p 4433:443 -p 8081:80 -v $PWD/letsencrypt:/etc/letsencrypt/ certbot/certbot certonly --standalone --noninteractive --quiet --email $EMAIL --agree-tos -d $DOMAIN
 docker run -it --rm -v $PWD/letsencrypt/live/:/certificates/ lesspass/openssl openssl dhparam -out /certificates/$DOMAIN/dhparam.pem 4096
 
 ############
