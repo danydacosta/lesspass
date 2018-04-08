@@ -45,7 +45,7 @@ EOF
 #######################
 # Docker compose file #
 #######################
-curl -s -o docker-compose.yml https://raw.githubusercontent.com/lesspass/lesspass/master/docker-compose.prod.yml
+curl -s -o docker-compose.yml https://raw.githubusercontent.com/danydacosta/lesspass/master/docker-compose.prod.yml
 docker-compose pull
 docker-compose down
 
@@ -60,7 +60,7 @@ docker run -it --rm -v $PWD/letsencrypt/live/:/certificates/ lesspass/openssl op
 ############
 # LessPass #
 ############
-curl -s -o update.sh https://raw.githubusercontent.com/lesspass/lesspass/master/scripts/update.sh
+curl -s -o update.sh https://raw.githubusercontent.com/danydacosta/lesspass/master/scripts/update.sh
 chmod u+x update.sh
 docker-compose up -d
 echo "--------------------------------------------"
